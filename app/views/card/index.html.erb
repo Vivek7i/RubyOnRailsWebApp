@@ -1,0 +1,16 @@
+<h1>Cards</h1>
+
+<%= link_to 'New Card', create_card_path %>
+
+<div class="card-list">
+
+  <% Card.all.each do |card|%>
+    <div class="card">
+      <h2><%= link_to card.title, card %></h2>
+      <%= image_tag card.image_url if card.image_url.present? %>
+      <p><%= card.description %></p>
+      <%= link_to 'Edit', edit_card_path(card) %> |
+      <%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  <% end %>
+</div>
