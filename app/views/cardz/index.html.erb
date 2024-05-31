@@ -1,0 +1,29 @@
+<h1>Cards</h1>
+ <div class="my-2">
+<%= link_to 'Add New Card', cardz_new_path%>
+</div>
+<div class="card-list my-4">
+   
+
+  <% Current.person.cardz.all.each do |cardz|%>
+  <div class="col-md-4 my-7">
+    <div class="card" style="width: 15rem;" >
+  <img class="card-img-top" src="..." alt="">
+  <div class="card-body">
+    <h5 class="card-title"><%=cardz.title%></h5>
+    <p class="card-text"><%=cardz.content%></p>
+    
+
+    <%= button_to ' Edit  ', cardz_edit_path(cardz)%>
+    <div class="my-2">
+      <%= button_to 'Delete', cardz_delete_path(cardz) %> 
+      </div>
+  </div>
+</div>
+</div>
+      
+ 
+
+    </div>
+  <% end %>
+</div>

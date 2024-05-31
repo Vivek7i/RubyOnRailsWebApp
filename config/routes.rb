@@ -9,15 +9,15 @@ Rails.application.routes.draw do
 
   post"sign_up", to:"registrations#create"
 
-  get "create_card", to:"card#new"
-  post "create_card", to:"card#create"
+  get "cardz/new", to:"cardz#new"
+  post "cardz/new", to:"cardz#create"
 
-  get "all_cards", to:"card#index"
+  get "cardz", to:"cardz#index"
 
-  get "edit_card", to:"card#edit"
-  patch"edit_card", to:"card#update"
+  get "cardz/edit", to:"cardz#edit"
+  post"cardz/edit", to:"cardz#update"
  
-  delete "delete_card", to:"card#destroy"
+  delete "cardz_delete", to:"cardz#destroy"
 
   get "sign_in", to:"sessions#new"
 

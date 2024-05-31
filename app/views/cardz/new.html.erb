@@ -1,0 +1,23 @@
+<h1> Create Card</h1>
+
+<%= form_with model:@cardz, url:cardz_new_path,data: { turbo: false } do |form| %>
+<% if @cardz.errors.any? %>
+  <div class="alert alert-danger">
+  <% @cardz.errors.full_messages.each do|message|%>
+  <div><%=message%></div>
+  <%end%>
+  </div>
+   <%end%>
+   <div class="mb-3">
+   <%=form.label :Title %>
+ <%=form.text_field :title, class:"form-control", placeholder:"abc" %>
+ </div>
+ <div class="mb-3">
+  <%=form.label :Content %>
+ <%=form.text_field :content, class:"form-control", placeholder:"xyz"%>
+ </div>
+ <div class="mb-3">
+  <%= form.submit :"Show Card", class:"btn btn-primary" %>
+ 
+ </div>
+<%end%>

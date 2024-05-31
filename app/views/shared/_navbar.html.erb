@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+  <a class="navbar-brand" href="/">Calendly</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,23 +7,46 @@
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="/">Home <span class="sr-only"></span></a>
       <a class="nav-item nav-link" href="/about">About</a>
-      <a class="nav-item nav-link" href="/create_card">Create Card</a>
-      <a class="nav-item nav-link" href="/all_cards">My Cards</a>
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-       <li class="nav-items">
+      <a class="nav-item nav-link" href="/cardz/new">Create Card</a>
+      <a class="nav-item nav-link" href="/cardz">My Cards</a>
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+       <%
+=begin%>
+ <li class="nav-items"> 
+<%
+=end%>
   
+  <div class="d-flex ms-auto">
        <%if Current.person%>
-  <%=link_to Current.person.email , edit_password_path %>
+  <%=button_to 'Change Password' , edit_password_path, method: :get %>
+  <%
+=begin%>
+ </li> 
+<%
+=end%>
+   <%
+=begin%>
+ <li class="nav-items"> 
+<%
+=end%>
+<ul className="navbar-nav me-auto mb-8 mb-lg-9">
   <%=button_to "Logout", logout_path, method: :delete %>
-  </li>
+  </ul>
+
+  <%
+=begin%>
+ </li> 
+<%
+=end%>
   <%else%>
-  <li class="nav-items">
-  <%=link_to "Login",sign_in_path%>
-  </li>
-  <li class="nav-items">
-  <%=link_to "Sign Up", sign_up_path%>
-  </li>
+  <ul className="navbar-nav me-auto mb-8 mb-lg-9">
+  <%=button_to "Login",sign_in_path, method: :get%>
+  </ul>
+  <ul className="navbar-nav me-auto mb-8 mb-lg-9">
+  <%=button_to "Sign Up", sign_up_path, method: :get%>
+  </ul>
   <%end%>
+  </div>
       </ul>
     </div>
   </div>
