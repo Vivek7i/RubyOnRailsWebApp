@@ -9,6 +9,15 @@
   <%=form.label :Password %>
  <%=form.password_field :password , class:"form-control", placeholder:"password"%>
  <%=link_to "Forgot your Password?",password_reset_path%>
+ <ul>
+ 
+ <%
+=begin%>
+ <%=link_to "Not Registered? Sign up here",sign_up_path%> 
+<%
+=end%>
+
+ </ul>
  </div>
 
  <div class="mb-3">

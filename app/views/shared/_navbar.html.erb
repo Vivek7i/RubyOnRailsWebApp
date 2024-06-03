@@ -18,7 +18,7 @@
   
   <div class="d-flex ms-auto">
        <%if Current.person%>
-  <%=button_to 'Change Password' , edit_password_path, method: :get %>
+  <%=button_to 'Change Password' , edit_password_path, method: :get, class:"btn btn-warning" %>
   <%
 =begin%>
  </li> 
@@ -30,7 +30,7 @@
 <%
 =end%>
 <ul className="navbar-nav me-auto mb-8 mb-lg-9">
-  <%=button_to "Logout", logout_path, method: :delete %>
+  <%=button_to "Logout", logout_path, method: :delete, class:"btn btn-danger"%>
   </ul>
 
   <%
@@ -40,10 +40,10 @@
 =end%>
   <%else%>
   <ul className="navbar-nav me-auto mb-8 mb-lg-9">
-  <%=button_to "Login",sign_in_path, method: :get%>
+  <%=link_to"Login",sign_in_path, method: :get , class:"btn btn-primary"%>
   </ul>
   <ul className="navbar-nav me-auto mb-8 mb-lg-9">
-  <%=button_to "Sign Up", sign_up_path, method: :get%>
+  <%=link_to "Sign Up", sign_up_path, method: :get, class:"btn btn-primary"%>
   </ul>
   <%end%>
   </div>

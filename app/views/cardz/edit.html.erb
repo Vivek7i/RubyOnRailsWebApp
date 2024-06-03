@@ -1,6 +1,6 @@
 <h1> Edit Card</h1>
 
-<%= form_with model:@cardz, url:cardz_edit_path,data: { turbo: false } do |form| %>
+<%= form_with model:@cardz, url:edit_cardz_path,data: { turbo: false } do |form| %>
    <div class="mb-3">
    <%=form.label :Title %>
  <%=form.text_field :title, class:"form-control", placeholder:"abc" %>

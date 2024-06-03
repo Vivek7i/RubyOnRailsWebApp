@@ -12,18 +12,24 @@ Rails.application.routes.draw do
   get "cardz/new", to:"cardz#new"
   post "cardz/new", to:"cardz#create"
 
-  get "cardz", to:"cardz#index"
+  get "cardz", to:"cardz#index" , as: :cardz
 
-  get "cardz/edit", to:"cardz#edit"
-  post"cardz/edit", to:"cardz#update"
- 
-  delete "cardz_delete", to:"cardz#destroy"
+  get "cardz/edit/:id", to:"cardz#edit", as: :edit_cardz
+  patch "cardz/edit/:id", to:"cardz#update"
+  post "cardz/:id", to:"cardz#update"
+
+  get "cardz/delete/:id", to:"cardz#destroy"
+  
+  delete "cardz/delete/:id", to:"cardz#destroy", as: :delete_cardz
+  # post "cardz/:id", to:"cardz#destroy"
+  
 
   get "sign_in", to:"sessions#new"
 
   post"sign_in", to:"sessions#create"
 
   delete "logout", to:"sessions#destroy"
+  # get "logout", to:"sessions#new"
 
   get "password", to:"passwords#edit", as: :edit_password
   patch "password", to:"passwords#update", as: :update_password

@@ -12,11 +12,11 @@
   <div class="card-body">
     <h5 class="card-title"><%=cardz.title%></h5>
     <p class="card-text"><%=cardz.content%></p>
-    
-
-    <%= button_to ' Edit  ', cardz_edit_path(cardz)%>
+    <%= link_to ' Edit Card ', edit_cardz_path(cardz), class:"btn btn-primary" %>
     <div class="my-2">
-      <%= button_to 'Delete', cardz_delete_path(cardz) %> 
+      
+ <%= link_to 'Delete It', delete_cardz_path(cardz), method: :delete, class:"btn btn-danger" %>
+
       </div>
   </div>
 </div>
